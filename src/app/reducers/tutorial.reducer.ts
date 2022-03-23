@@ -11,6 +11,9 @@ export function tutorialReducer(state: Tutorial[] = [initialState], action: Tuto
     switch (action.type) {
         case TutorialActions.ADD_TUTORIAL:
             return [...state, action.payload]
+        case TutorialActions.REMOVE_TUTORIAL:
+            state = state.filter((el, index) => index != action.payload)
+            return state;
         default:
             return state;
     }
