@@ -5,18 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { StoreModule } from '@ngrx/store';
-import { reducer } from './reducers/tutorial.reducer';
+import { tutorialReducer } from './reducers/tutorial.reducer';
+import { ReadComponent } from './read/read.component';
+import { CreateComponent } from './create/create.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ReadComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot({
-      tutorial: reducer
+      tutorial: tutorialReducer
     })
   ],
   providers: [],
