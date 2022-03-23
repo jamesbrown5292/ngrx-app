@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Store } from '@ngrx/store'
+import { AppState } from '../app.state'
+import { Tutorial } from '../models/tutorial.model'
+import * as TutorialActions from '../actions/tutorial.actions'
+
+
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',
@@ -7,7 +13,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateComponent implements OnInit {
 
-  constructor() { }
+  constructor(private store: Store<AppState>) { }
+
+  addTutorial(name: any, url: any) {
+    this.store.dispatch(new TutorialActions.AddTutorial({name: name, url: url}))
+  }
 
   ngOnInit(): void {
   }

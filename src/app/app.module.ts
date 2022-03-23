@@ -20,7 +20,7 @@ import { CreateComponent } from './create/create.component';
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot({
-      tutorial: tutorialReducer
+      tutorial: tutorialReducer as any
     })
   ],
   providers: [],
